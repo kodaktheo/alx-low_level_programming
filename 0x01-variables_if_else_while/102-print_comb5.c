@@ -9,15 +9,27 @@
  */
 int main(void)
 {
-	int n;
+	int p, q;
 
-		srand(time(0));
-		n = rand() - RAND_MAX / 2;
-		if (n % 10 > 5)
-		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10);
-		else if (n % 10 == 0)
-		printf("Last digit of %d is %d and is 0\n", n, n % 10);
-		else
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
-		return (0);
+	for (p = 0; p <= 98; p++)
+	{
+		for (q = p + 1; q <= 99; q++)
+		{
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+
+			if (p == 98 && q == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
+		}
+	}
+
+	putchar('\n');
+
+	return (0);
 }
